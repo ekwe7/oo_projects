@@ -32,5 +32,8 @@ public class Transaction {
     public float getLiters() {
         return liters;
     }
+    public float getTotalCost() {
+        return totalCost;
+    }
 
 }

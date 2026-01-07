@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Dispenser {
-    private Map<FuelType, Fuel> fuels = new HashMap<FuelType, Fuel>();
-    private List<Transaction> transactions = new ArrayList<>();
+    private final Map<FuelType, Fuel> fuels = new HashMap<FuelType, Fuel>();
+    private final List<Transaction> transactions = new ArrayList<>();
 
     public void addFuel(FuelType type, float quantity) {
         fuels.put(type, new Fuel(type, quantity));
@@ -32,7 +32,7 @@ public class Dispenser {
     }
     public Transaction dispenseByAmount(FuelType type, float dispenseAmount) {
         float liters = dispenseAmount / type.getPricePerLiter();
-        return dispenseByLiter(type, liters, liters);
+        return dispenseByLiter(type, liters, dispenseAmount);
     }
 
 }
